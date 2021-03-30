@@ -21,6 +21,13 @@
   "twitter": {
     "handle": "@nextjs",
     "site": "@nextjs",
-    "cardType": "summary_large_image"
+    "cardType": "summary_large_image",
+    "images": [
+      {
+        "url": "/card.png",
+        "width": 505,
+        "height": 245,
+        "alt": "The Hack Market"
+      }
   }
 }
