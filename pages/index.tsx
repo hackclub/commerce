@@ -61,7 +61,7 @@ export default function Home({
                   that you've grown to love. You can use it to do anything from
                   power an LED to flying to the moon!
                 </p>
-                <Link href="/blog">
+                <Link href="/product/corginator-9000-development-board">
                   <a className="text-white pt-3 font-bold hover:underline flex flex-row cursor-pointer w-max-content">
                     Get one now
                     <RightArrow width="20" heigh="20" className="ml-1" />
