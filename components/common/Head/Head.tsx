@@ -9,7 +9,7 @@ const Head: FC = () => {
       <DefaultSeo {...config} />
       <NextHead>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="twitter:image" content="/card.png" />
+        <meta name="twitter:image" content="https://shop.hackclub.com/card.png" />
         <link rel="manifest" href="/site.webmanifest" key="site-manifest" />
       </NextHead>
     </>
