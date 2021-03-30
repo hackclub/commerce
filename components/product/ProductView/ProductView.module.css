@@ -24,7 +24,7 @@
 }
 
 .squareBg {
-  @apply absolute inset-0 bg-purple-50 z-0 h-full;
+  @apply absolute inset-0 bg-red z-0 h-full;
 }
 
 .nameBox {
@@ -47,7 +47,7 @@
   @screen lg {
     & .name,
     & .price {
-      @apply bg-purple-50 text-white;
+      @apply bg-red text-white;
     }
   }
 }
@@ -91,6 +91,6 @@
   @apply absolute z-30 top-6 right-0 bg-primary text-primary w-10 h-10 flex items-center justify-center font-semibold leading-6 cursor-pointer;
 
   @screen lg {
-    @apply right-12 text-white bg-purple-50;
+    @apply right-12 text-white bg-red;
   }
 }
