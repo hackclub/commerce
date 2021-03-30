@@ -3,7 +3,7 @@
   @apply grid grid-cols-1 gap-0;
   min-height: var(--row-height);
 
-  @screen lg {
+  @screen xl {
     @apply grid-cols-3 grid-rows-2;
   }
 

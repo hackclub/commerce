@@ -23,10 +23,6 @@
   }
 }
 
-.squareBg {
-  @apply absolute inset-0 bg-red z-0 h-full;
-}
-
 .nameBox {
   @apply absolute top-6 left-0 z-20 pr-16;
 

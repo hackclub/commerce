@@ -106,30 +106,60 @@ const ProductView: FC<Props> = ({ product }) => {
           <section>
             {product.options?.map((opt) => (
               <div className="pb-4" key={opt.displayName}>
-                <h2 className="uppercase font-medium">{opt.displayName}</h2>
+                <h2 className="uppercase font-medium font-semibold">
+                  {opt.displayName.toLowerCase() != 'finish'
+                    ? opt.displayName
+                    : 'TYPE'}
+                </h2>
                 <div className="flex flex-row py-4">
                   {opt.values.map((v, i: number) => {
                     const active = (choices as any)[
                       opt.displayName.toLowerCase()
                     ]
-
-                    return (
-                      <Swatch
-                        key={`${opt.id}-${i}`}
-                        active={v.label.toLowerCase() === active}
-                        variant={opt.displayName}
-                        color={v.hexColors ? v.hexColors[0] : ''}
-                        label={v.label}
-                        onClick={() => {
-                          setChoices((choices) => {
-                            return {
-                              ...choices,
-                              [opt.displayName.toLowerCase()]: v.label.toLowerCase(),
+                    if (opt.displayName.toLowerCase() != 'finish') {
+                      return (
+                        <Swatch
+                          key={`${opt.id}-${i}`}
+                          active={v.label.toLowerCase() === active}
+                          variant={opt.displayName}
+                          color={v.hexColors ? v.hexColors[0] : ''}
+                          label={v.label}
+                          onClick={() => {
+                            setChoices((choices) => {
+                              return {
+                                ...choices,
+                                [opt.displayName.toLowerCase()]: v.label.toLowerCase(),
+                              }
+                            })
+                          }}
+                        />
+                      )
+                    } else {
+                      return (
+                        <>
+                          <Swatch
+                            key={`${opt.id}-${i}`}
+                            active={v.label.toLowerCase() === active}
+                            variant={opt.displayName}
+                            color={
+                              v.label.toLowerCase() === active ? '#33d6a6' : ''
                             }
-                          })
-                        }}
-                      />
-                    )
+                            label={v.label}
+                            onClick={() => {
+                              setChoices((choices) => {
+                                return {
+                                  ...choices,
+                                  [opt.displayName.toLowerCase()]: v.label.toLowerCase(),
+                                }
+                              })
+                            }}
+                          />
+                          <span style={{ width: '110px', marginRight: '15px' }}>
+                            {opt.values[i].label}
+                          </span>
+                        </>
+                      )
+                    }
                   })}
                 </div>
               </div>

@@ -70,11 +70,10 @@ const Navbar: FC = () => (
           </nav>
         </div>
 
-        <div className="justify-center flex-1 hidden lg:flex">
-          <Searchbar />
-        </div>
-
         <div className="flex justify-end flex-1 space-x-8">
+          <div className="hidden lg:block">
+            <Searchbar />
+          </div>
           <UserNav />
         </div>
       </div>
