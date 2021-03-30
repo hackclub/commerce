@@ -11,9 +11,9 @@
     "site_name": "The Hack Market",
     "images": [
       {
-        "url": "/card.png",
-        "width": 505,
-        "height": 245,
+        "url": "https://shop.hackclub.com/card.png",
+        "width": 1200,
+        "height": 630,
         "alt": "The Hack Market"
       }
     ]
@@ -24,7 +24,7 @@
     "cardType": "summary_large_image",
     "images": [
       {
-        "url": "https://shop.hackclub.com",
+        "url": "https://shop.hackclub.com/card.png",
         "width": 1200,
         "height": 630,
         "alt": "The Hack Market"
