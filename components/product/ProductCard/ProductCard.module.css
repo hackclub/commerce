@@ -16,36 +16,18 @@
     & .productTitle > span,
     & .productPrice,
     & .wishlistButton {
-      @apply bg-secondary text-secondary;
+      @apply bg-red text-secondary;
     }
 
-    &:nth-child(6n + 1) .productTitle > span,
-    &:nth-child(6n + 1) .productPrice,
-    &:nth-child(6n + 1) .wishlistButton {
-      @apply bg-violet text-white;
-    }
-
-    &:nth-child(6n + 5) .productTitle > span,
-    &:nth-child(6n + 5) .productPrice,
-    &:nth-child(6n + 5) .wishlistButton {
-      @apply bg-blue text-white;
-    }
-
-    &:nth-child(6n + 3) .productTitle > span,
-    &:nth-child(6n + 3) .productPrice,
-    &:nth-child(6n + 3) .wishlistButton {
-      @apply bg-pink text-white;
-    }
-
-    &:nth-child(6n + 6) .productTitle > span,
-    &:nth-child(6n + 6) .productPrice,
-    &:nth-child(6n + 6) .wishlistButton {
-      @apply bg-cyan text-white;
+    .productTitle > span,
+    .productPrice,
+    .wishlistButton {
+      @apply bg-red text-white;
     }
   }
 
   &:nth-child(6n + 1) .squareBg {
-    @apply bg-violet;
+    @apply bg-purple-50;
   }
 
   &:nth-child(6n + 5) .squareBg {
@@ -114,6 +96,7 @@
 }
 
 .productPrice {
+  margin-top: 10px;
   @apply py-4 px-6 bg-primary text-primary font-semibold inline-block text-sm leading-6;
   letter-spacing: 0.4px;
 }

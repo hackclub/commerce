@@ -7,7 +7,7 @@
 }
 
 .productDisplay {
-  @apply relative flex px-0 pb-0 box-border col-span-1 bg-violet;
+  @apply relative flex px-0 pb-0 box-border col-span-1 bg-purple-50;
   min-height: 600px;
 
   @screen md {
@@ -24,7 +24,7 @@
 }
 
 .squareBg {
-  @apply absolute inset-0 bg-violet z-0 h-full;
+  @apply absolute inset-0 bg-purple-50 z-0 h-full;
 }
 
 .nameBox {
@@ -47,7 +47,7 @@
   @screen lg {
     & .name,
     & .price {
-      @apply bg-violet-light text-white;
+      @apply bg-purple-50 text-white;
     }
   }
 }
@@ -91,6 +91,6 @@
   @apply absolute z-30 top-6 right-0 bg-primary text-primary w-10 h-10 flex items-center justify-center font-semibold leading-6 cursor-pointer;
 
   @screen lg {
-    @apply right-12 text-white bg-violet;
+    @apply right-12 text-white bg-purple-50;
   }
 }

@@ -92,7 +92,7 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer">
+      <div className="w-16 h-16 bg-purple-50 relative overflow-hidden cursor-pointer">
         <Link href={`/product/${item.path}`}>
           <Image
             onClick={() => closeSidebarIfPresent()}

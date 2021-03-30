@@ -26,11 +26,6 @@ const ProductCard: FC<Props> = ({
     <a className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}>
       {variant === 'slim' ? (
         <div className="relative overflow-hidden box-border">
-          <div className="absolute inset-0 flex items-center justify-end mr-8 z-20">
-            <span className="bg-black text-white inline-block p-3 font-bold text-xl break-words">
-              {product.name}
-            </span>
-          </div>
           {product?.images && (
             <Image
               quality="85"
@@ -65,7 +60,7 @@ const ProductCard: FC<Props> = ({
               />
             )}
           </div>
-          <div className={s.imageContainer}>
+          <div className={`${s.imageContainer} border-4 border-white`}>
             {product?.images && (
               <Image
                 alt={product.name || 'Product Image'}

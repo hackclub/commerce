@@ -24,60 +24,19 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-accents-2 py-12 text-primary bg-primary transition-colors duration-150">
-          <div className="col-span-2 lg:col-span-4">
-            <Link href="/">
-              <a className="flex flex-initial font-semibold items-center md:mr-24">
-                <span className="rounded-full mr-2">
-                  <Logo />
-                </span>
-                <span>the Hack Club Market</span>
-              </a>
-            </Link>
-          </div>
-          <div className="col-span-1 lg:col-span-2">
-            <ul className="flex flex-initial flex-col md:flex-1">
-              {legalPages.map((page) => (
-                <li key={page.url} className="py-3 md:py-0 md:pb-4">
-                  <Link href={page.url!}>
-                    <a className="text-primary hover:text-accents-6 transition ease-in-out duration-150">
-                      {page.name}
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col-span-1 lg:col-span-6 flex items-start lg:justify-end text-primary">
-            <div className="flex space-x-6 items-center h-10">
-              <a
-                aria-label="Github Repository"
-                href="https://github.com/vercel/commerce"
-                className={s.link}
-              >
-                <Github />
-              </a>
-              <I18nWidget />
-            </div>
-          </div>
-        </div>
         <div className="py-12 flex flex-col md:flex-row justify-between items-center space-y-4">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>&copy; 2021 Hack Club. All rights reserved.</span>
           </div>
           <div className="flex items-center text-primary">
-            <span className="text-primary">Crafted by</span>
             <a
               rel="noopener"
-              href="https://vercel.com"
-              aria-label="Vercel.com Link"
+              href="https://hackclub.com"
+              aria-label="Hackclub.com Link"
               target="_blank"
               className="text-primary"
             >
-              <Vercel
-                className="inline-block h-6 ml-4 text-primary"
-                alt="Vercel.com Logo"
-              />
+              <Logo />
             </a>
           </div>
         </div>

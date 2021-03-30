@@ -28,6 +28,10 @@
 .layoutNormal {
   @apply gap-3;
 
+  @screen lg {
+    @apply grid-cols-4;
+  }
+
   & > * {
     min-height: 325px;
   }
@@ -70,7 +74,7 @@
     }
 
     & > *:nth-child(6n + 4) {
-      @apply bg-violet;
+      @apply bg-purple-50;
     }
 
     & > *:nth-child(6n + 3) {
@@ -96,7 +100,7 @@
 
   &.filled {
     & > *:nth-child(12n + 1) {
-      @apply bg-violet;
+      @apply bg-purple-50;
       height: var(--row-height);
     }
 
@@ -124,7 +128,7 @@
 
   &.filled {
     & > *:nth-child(12n + 2) {
-      @apply bg-violet;
+      @apply bg-purple-50;
     }
 
     & > *:nth-child(12n + 7) {

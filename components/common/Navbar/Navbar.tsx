@@ -10,23 +10,62 @@ const Navbar: FC = () => (
     <Container>
       <div className="relative flex flex-row justify-between py-4 align-center md:py-6">
         <div className="flex items-center flex-1">
-          <Link href="/">
-            <a className={s.logo} aria-label="Logo">
-              <Logo />
+          <a aria-label="Logo">
+            <a
+              title="Hack Club"
+              href="https://hackclub.com/"
+              className="nav-flag"
+            >
+              <style jsx>{`
+                a {
+                  display: inline-block;
+                  background-image: url(https://assets.hackclub.com/flag-orpheus-top.svg);
+                  background-repeat: no-repeat;
+                  background-position: top left;
+                  background-size: contain;
+                  cursor: pointer;
+                  flex-shrink: 0;
+                  width: 112px;
+                  height: 48px;
+                  position: absolute;
+                  top: 0;
+                }
+                @media (min-width: 32em) {
+                  a {
+                    height: 64px;
+                  }
+                }
+                @media (prefers-reduced-motion: no-preference) {
+                  a {
+                    transition: ${3 / 16}s cubic-bezier(0.375, 0, 0.675, 1)
+                      transform;
+                    transform-origin: top left;
+                  }
+                  a:hover,
+                  a:focus {
+                    animation: waveFlag 0.5s linear infinite alternate;
+                  }
+                }
+                @keyframes waveFlag {
+                  from {
+                    transform: rotate(0deg);
+                  }
+                  to {
+                    transform: rotate(-5deg);
+                  }
+                }
+              `}</style>
             </a>
-          </Link>
-          <nav className="hidden ml-6 space-x-4 lg:block">
-            <Link href="/search">
-              <a className={s.link}>All</a>
+          </a>
+          <nav className="hidden ml-36 space-x-4 lg:block">
+            <Link href="/">
+              <a className={s.link}>Home</a>
             </Link>
-            <Link href="/search?q=clothes">
+            <Link href="/search/clothes">
               <a className={s.link}>Clothes</a>
             </Link>
-            <Link href="/search?q=accessories">
-              <a className={s.link}>Accessories</a>
-            </Link>
-            <Link href="/search?q=shoes">
-              <a className={s.link}>Shoes</a>
+            <Link href="/search/development-boards">
+              <a className={s.link}>Development Boards</a>
             </Link>
           </nav>
         </div>

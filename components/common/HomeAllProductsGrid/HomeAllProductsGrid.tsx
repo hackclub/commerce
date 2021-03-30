@@ -20,7 +20,7 @@ const HomeAllProductsGrid: FC<Props> = ({
   products = [],
 }) => {
   return (
-    <div className={s.root}>
+    <div className={s.root} style={{ background: 'lightgrey' }}>
       {showcategories ? (
         <div className={s.asideWrapper}>
           <div className={s.aside}>

@@ -3,7 +3,7 @@
 
   &:nth-child(3n + 1) {
     & .productBg {
-      @apply bg-violet;
+      @apply bg-purple-50;
     }
   }
 

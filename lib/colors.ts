@@ -53,7 +53,7 @@ const colorMap: Record<string, string> = {
   black: '#000000',
   blanchedalmond: '#FFEBCD',
   blue: '#0000FF',
-  blueviolet: '#8A2BE2',
+  bluepurple: '#8A2BE2',
   brown: '#A52A2A',
   burlywood: '#DEB887',
   cadetblue: '#5F9EA0',
