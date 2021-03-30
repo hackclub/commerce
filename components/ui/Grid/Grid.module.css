@@ -34,32 +34,21 @@
 }
 
 .layoutA {
+  --row-height: min-height;
+  @screen lg {
+    @apply grid-cols-3 grid-rows-1;
+  }
+
+  & > * {
+    @apply bg-black;
+  }
+
   & > *:nth-child(6n + 1),
   & > *:nth-child(6n + 5) {
-    @apply row-span-2;
     height: var(--row-height);
 
     @screen lg {
       @apply col-span-2;
-    }
-  }
-
-  &.filled {
-    & > *:nth-child(6n + 1),
-    & > *:nth-child(6n + 5) {
-      @apply bg-violet;
-    }
-
-    & > *:nth-child(6n + 5) {
-      @apply bg-blue;
-    }
-
-    & > *:nth-child(6n + 3) {
-      @apply bg-pink;
-    }
-
-    & > *:nth-child(6n + 6) {
-      @apply bg-cyan;
     }
   }
 }

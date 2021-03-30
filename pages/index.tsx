@@ -1,13 +1,16 @@
 import { Layout } from '@components/common'
-import { Grid, Marquee, Hero } from '@components/ui'
+import { Grid, Marquee, Hero, Container } from '@components/ui'
+import { RightArrow } from '@components/icons'
 import { ProductCard } from '@components/product'
-// import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
+import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
-
+import Link from 'next/link'
 import { getConfig } from '@framework/api'
 import getAllProducts from '@framework/product/get-all-products'
 import getSiteInfo from '@framework/common/get-site-info'
 import getAllPages from '@framework/common/get-all-pages'
+import Image from 'next/image'
+import { filter } from 'lodash'
 
 export async function getStaticProps({
   preview,
@@ -43,7 +46,44 @@ export default function Home({
   return (
     <>
       <Grid>
-        {products.slice(0, 2).map((product, i) => (
+        <div className="bg-black">
+          <Container>
+            <div className="py-10">
+              <h2 className="text-4xl leading-10 font-semibold text-white sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+                Introducing the
+              </h2>
+              <h1 className="text-7xl leading-10 font-extrabold text-white sm:text-5xl sm:leading-none sm:tracking-tight lg:text-9xl">
+                Corginator
+              </h1>
+              <div className="flex flex-col justify-between">
+                <p className="mt-5 text-xl leading-7 text-accent-2 text-white">
+                  A unique design with the same core functionality of a Arduino
+                  that you've grown to love. You can use it to do anything from
+                  power an LED to flying to the moon!
+                </p>
+                <Link href="/blog">
+                  <a className="text-white pt-3 font-bold hover:underline flex flex-row cursor-pointer w-max-content">
+                    Get one now
+                    <RightArrow width="20" heigh="20" className="ml-1" />
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </Container>
+        </div>
+        <div className="bg-black">
+          <div
+            style={{ height: '100%', width: '100%', position: 'relative' }}
+            className="nextimagefit"
+          >
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0021/6095/1385/products/ScreenShot2021-01-02at7.58.44PM_1080x.png?v=1609637099"
+              layout="fill"
+              className="object-fill"
+            />
+          </div>
+        </div>
+        {products.slice(0, 0).map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}
@@ -55,58 +95,37 @@ export default function Home({
         ))}
       </Grid>
       <Marquee variant="secondary">
-        {products.map((product, i) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            variant="slim"
-            imgProps={{
-              width: 320,
-              height: 320,
-            }}
-          />
-        ))}
+        {filter(
+          products,
+          (product) =>
+            !product.name.includes('Corgi') &&
+            !product.name.includes('Soldering')
+        ).map((product, i) =>
+          product.name.includes('Corgi') === false ? (
+            product.name.includes('Soldering') === false ? (
+              <ProductCard
+                key={product.id}
+                product={product}
+                variant="slim"
+                imgProps={{
+                  width: 320,
+                  height: 320,
+                }}
+              />
+            ) : (
+              ''
+            )
+          ) : (
+            ''
+          )
+        )}
       </Marquee>
-      <Hero
-        headline="Release Details: The Yeezy BOOST 350 V2 ‘Natural'"
-        description="
-        The Yeezy BOOST 350 V2 lineup continues to grow. We recently had the
-        ‘Carbon’ iteration, and now release details have been locked in for
-        this ‘Natural’ joint. Revealed by Yeezy Mafia earlier this year, the
-        shoe was originally called ‘Abez’, which translated to ‘Tin’ in
-        Hebrew. It’s now undergone a name change, and will be referred to as
-        ‘Natural’."
-      />
-      <Grid layout="B">
-        {products.slice(0, 3).map((product, i) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            imgProps={{
-              width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
-            }}
-          />
-        ))}
-      </Grid>
-      <Marquee>
-        {products.slice(0, 3).map((product, i) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            variant="slim"
-            imgProps={{
-              width: 320,
-              height: 320,
-            }}
-          />
-        ))}
-      </Marquee>
-      {/* <HomeAllProductsGrid
-        newestProducts={products}
+      <HomeAllProductsGrid
+        showcategories={false}
+        products={products}
         categories={categories}
         brands={brands}
-      /> */}
+      />
     </>
   )
 }

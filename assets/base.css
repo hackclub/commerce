@@ -170,3 +170,6 @@ a {
   }
 }
 
+.nextimagefit div img{
+  object-fit: contain;
+}

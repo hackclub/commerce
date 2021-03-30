@@ -9,34 +9,40 @@ import { getCategoryPath, getDesignerPath } from '@lib/search'
 interface Props {
   categories?: any
   brands?: any
+  showcategories?: any
   products?: Product[]
 }
 
 const HomeAllProductsGrid: FC<Props> = ({
   categories,
+  showcategories = true,
   brands,
   products = [],
 }) => {
   return (
     <div className={s.root}>
-      <div className={s.asideWrapper}>
-        <div className={s.aside}>
-          <ul className="mb-10">
-            <li className="py-1 text-base font-bold tracking-wide">
-              <Link href={getCategoryPath('')}>
-                <a>All Categories</a>
-              </Link>
-            </li>
-            {categories.map((cat: any) => (
-              <li key={cat.path} className="py-1 text-accents-8 text-base">
-                <Link href={getCategoryPath(cat.path)}>
-                  <a>{cat.name}</a>
+      {showcategories ? (
+        <div className={s.asideWrapper}>
+          <div className={s.aside}>
+            <ul className="mb-10">
+              <li className="py-1 text-base font-bold tracking-wide">
+                <Link href={getCategoryPath('')}>
+                  <a>All Categories</a>
                 </Link>
               </li>
-            ))}
-          </ul>
+              {categories.map((cat: any) => (
+                <li key={cat.path} className="py-1 text-accents-8 text-base">
+                  <Link href={getCategoryPath(cat.path)}>
+                    <a>{cat.name}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      ) : (
+        ''
+      )}
       <div className="flex-1">
         <Grid layout="normal">
           {products.map((product) => (
