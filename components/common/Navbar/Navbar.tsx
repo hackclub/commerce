@@ -57,7 +57,7 @@ const Navbar: FC = () => (
               `}</style>
             </a>
           </a>
-          <nav className="hidden ml-36 space-x-4 lg:block">
+          <nav className="hidden ml-36 space-x-4 lg:block font-bold">
             <Link href="/">
               <a className={s.link}>Home</a>
             </Link>
