@@ -43,19 +43,19 @@ export default function Home({
   return (
     <>
       <Grid>
-        {products.slice(0, 3).map((product, i) => (
+        {products.slice(0, 2).map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}
             imgProps={{
               width: i === 0 ? 1080 : 540,
-              height: i === 0 ? 1080 : 540,
+              height: i === 0 ? 540 : 540,
             }}
           />
         ))}
       </Grid>
       <Marquee variant="secondary">
-        {products.slice(0, 3).map((product, i) => (
+        {products.map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}
