@@ -98,10 +98,10 @@ export default function Home({
         {filter(
           products,
           (product) =>
-            !product.name.includes('Corgi') &&
+            !product.name.includes('Corg') &&
             !product.name.includes('Soldering')
         ).map((product, i) =>
-          product.name.includes('Corgi') === false ? (
+          product.name.includes('Corg') === false ? (
             product.name.includes('Soldering') === false ? (
               <ProductCard
                 key={product.id}
