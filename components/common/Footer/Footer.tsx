@@ -26,7 +26,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
       <Container>
         <div className="py-12 flex flex-col md:flex-row justify-between items-center space-y-4">
           <div>
-            <span>&copy; 2021 Hack Club. All rights reserved.</span>
+            <span>Ran by the Hack Club Community.</span>
           </div>
           <div className="flex items-center text-primary">
             <a
